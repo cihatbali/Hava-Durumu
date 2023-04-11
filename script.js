@@ -21,11 +21,15 @@ const getResult = (cityName) => {
 
 // ters tırnaklara dikkat
 const displayResult = (result) => {
+    console.log(result)
     let city = document.querySelector('.city')
     city.innerText = `${result.name}, ${result.sys.country}`
 
     let temp = document.querySelector('.temp')
     temp.innerText = `${Math.round(result.main.temp)}°C`
+
+    let humidity = document.querySelector('.humidity')
+    humidity.innerText = `nem: ${Math.round(result.main.humidity)}%`
 
     let desc = document.querySelector('.desc')
     desc.innerText = result.weather[0].description
